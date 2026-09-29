@@ -1,0 +1,1 @@
+// We use type in TypeScript to define what kind of data a variable, function, or object is supposed to work with.
