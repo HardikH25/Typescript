@@ -38,7 +38,7 @@ class Chai2 {
 // CANNOT DO: new Chai2().secretIngredients (TypeScript compile-time error)
 
 class Shop {
-    // PROTECTED: Accessible inside this class AND inside any class that extends (inherits from) it.
+    // PROTECTED: Accessible inside this class AND inside any 'class' that extends (inherits from) it.
     // Outside objects cannot access it directly.
     protected shopName: string = 'Chai Corner';
 }
@@ -169,7 +169,7 @@ class ChaiMakerInheritance extends Heater {
 }
 const inheritanceMaker = new ChaiMakerInheritance();
 inheritanceMaker.make();
-// inheritanceMaker.heat(); // ⚠️ Notice: Outside callers can also call .heat() directly!
+inheritanceMaker.heat(); // ⚠️ Notice: Outside callers can also call .heat() directly!
 
 
 // Approach 2: COMPOSITION ("HAS-A" Relationship)  <-- ⭐ INDUSTRY PREFERRED
@@ -188,7 +188,7 @@ inheritanceMaker.make();
 // ✔ Clean Encapsulation: 'this.heater' is private. Callers only see and use .make().
 // ✔ Testability: Easy to mock the heater when writing automated unit tests.
 class ChaiMakerComposition {
-    private heater: Heater;
+    private heater: Heater; //private is important to use here.
 
     constructor(heater: Heater) {
         this.heater = heater; // Stores the reference to the external component

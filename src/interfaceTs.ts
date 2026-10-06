@@ -26,7 +26,7 @@ interface CupSize {
 }
 class Chai implements CupSize{
     //size = "large" //"This is a class property that could later be reassigned to any string (e.g. chai.size = 'medium'), so its type is string."
-    size: "small" | "large" = "large"
+    size : 'large' | 'small' =  "large"
 }
 //same issue again -> the chaiClass.masala will be a number but we want either of 1,2,3 and not any number
 //this issue with hardcoded property is to be taken care of
